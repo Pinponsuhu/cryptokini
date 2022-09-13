@@ -1,16 +1,16 @@
 @extends('layout.app')
 @section('content')
-    <main class="px-8 md:px-16 mt-4">
+    <main class="px-4 md:px-9 lg:px-16 mt-4">
         <div class="flex flex-col-reverse md:grid gap-y-5 md:grid-cols-2 mt-8 items-center">
             <div>
-                <h1 class="text-2xl md:text-5xl leading-normal font-semibold">Crypto & Digital Gift <br> Card Wallet in Africa</h1>
+                <h1 class="text-2xl md:text-5xl leading-10 font-semibold">Crypto & Digital Gift <br> Card Wallet in Africa</h1>
                 <p class="text-gray-500 leading-8 mt-5">A user-centric platform designed for YOU to trade, buy and sell various digital assets including gift cards, Bitcoins, Tether, Litecoins, Dogecoins, Airtime and Data topup. Including Naira, Cedis, Bitcoin & USDT as payment options.</p>
             </div>
             <div class="flex justify-center">
                 <img src="{{ asset('images/bit.png') }}" class="h-64 w-80" alt="">
             </div>
         </div>
-        <div class="grid grid-cols-1 gap-y-4 md:grid-cols-3 gap-x-16 justify-center mt-16">
+        <div class="grid grid-cols-1 gap-y-4 md:grid-cols-2 lg:grid-cols-3 gap-x-16 justify-center mt-16">
             <div class="h-full hover:bg-gray-900 hover:text-gray-100 p-6 bg-white shadow-md rounded-md text-gray-900">
                 <div class="w-14 h-14 flex items-center justify-center rounded-md bg-green-100 text-green-400 mb-3">
                     <i class="far fa-bell text-2xl"></i>

@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('content')
-    <main class="px-8 md:px-28 mt-4">
+    <main class="px-4 md:px-9 lg:px-16 mt-4">
         <h1 class="md:text-3xl text-2xl leading-normal font-semibold">Frequently Asked Questions</h1>
         <div class="mt-6">
             <div class="bg-indigo-200 none py-5 mb-2.5 px-6">

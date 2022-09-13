@@ -18,21 +18,21 @@
                     <img src="{{ asset('images/success.png') }}" class="block h-16 mb-1.5" alt="">
                     <p class="text-gray-400 text-sm">Successful</p>
                 </div>
-                <h1 class="text-4xl font-bold text-gray-900">0</h1>
+                <h1 class="text-4xl font-bold text-gray-900">{{ $success }}</h1>
             </div>
             <div class="w-64 shadow-md flex items-center justify-between bg-white rounded-lg p-6">
                 <div>
                     <img src="{{ asset('images/failed.png') }}" class="block h-16 mb-1.5" alt="">
                     <p class="text-gray-400 text-sm">Failed</p>
                 </div>
-                <h1 class="text-4xl font-bold text-gray-900">0</h1>
+                <h1 class="text-4xl font-bold text-gray-900">{{ $failed }}</h1>
             </div>
             <div class="w-64 shadow-md flex items-center justify-between bg-white rounded-lg p-6">
                 <div>
                     <img src="{{ asset('images/pending.png') }}" class="block h-16 mb-1.5" alt="">
                     <p class="text-gray-400 text-sm">Pending</p>
                 </div>
-                <h1 class="text-4xl font-bold text-gray-900">0</h1>
+                <h1 class="text-4xl font-bold text-gray-900">{{ $pending }}</h1>
             </div>
         </div>
             <h1 class="text-3xl font-bold mt-8">Gift Card</h1>
@@ -47,7 +47,20 @@
                     <p class="font-semibold">Type</p>
                 </div>
                 <hr class="mb-4">
-                <p class="text-xl text-center py-5 italic font-medium">No History of any transaction was found</p>
+            @if ($transactions->count() > 0)
+                @foreach ($transactions as $transaction)
+                <div class="flex justify-between items-center py-3">
+                    <p class="font-semibold">{{ $transaction->category }}</p>
+                    <p class="font-semibold">{{ $transaction->created_at }}</p>
+                    <p class="font-semibold">{{ $transaction->trade_amount }} | <span class="text-indigo-600">{{ $transaction->rate }}</span></p>
+                    <p class="font-semibold">{{ $transaction->trade_amount * $transaction->rate }}</p>
+                    <p class="font-semibold">{{ $transaction->status }}</p>
+                    <p class="font-semibold">{{ $transaction->sub_category }}</p>
+                </div>
+                @endforeach
+            @else
+            <p class="text-xl text-center py-5 italic font-medium">No History of any transaction was found</p>
+            @endif
             </div>
     </main>
     <aside id="notification" class="fixed w-screen h-screen hidden bg-gray-900 bg-opacity-80 top-0 left-0 flex justify-center items-center">

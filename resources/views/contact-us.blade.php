@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('content')
-    <main class="px-8 md:px-28 mt-6 md:mt-12">
+    <main class="px-4 md:px-9 lg:px-16 mt-6 md:mt-12">
         <h1 class="text-2xl md:text-3xl leading-normal font-semibold">Contact Us</h1>
         <div class="grid md:grid-cols-2 gap-y-8 lg:grid-cols-3 mt-8 gap-x-16 items-center px-4">
             <div>

@@ -1,5 +1,5 @@
-<footer class="px-8  md:px-20 pt-12 md:pt-20 bg-gray-900 text-white">
-    <div class="flex flex-col md:flex-row md:gap-x-24 gap-y-8 md:items-center justify-center">
+<footer class="px-4 md:px-9 lg::px-16 pt-12 md:pt-20 bg-gray-900 text-white">
+    <div class="flex flex-col md:flex-row md:gap-x-12 lg:gap-x-24 gap-y-8 md:items-center justify-center">
         <div class="md:w-96 w-72">
             <h1 class="font-bold text-3xl">Crypto<span class="text-indigo-600">Kini</span></h1>
             <p class="text-sm leading-8 mt-3">Bridging the gap between individuals who need liquid cash and businesses who need discounted gift cards as a payment alternative. Cardtonic is available for Web, iPhone, and Android users.</p>

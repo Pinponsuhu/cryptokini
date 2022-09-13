@@ -28,8 +28,8 @@ class RegisterController extends Controller
             'user_id' => $user->id
         ]);
 
-        \Illuminate\Support\Facades\Mail::send(new \App\Mail\RegisteredMail($request->email, $request->fullname));        
+        // \Illuminate\Support\Facades\Mail::send(new \App\Mail\RegisteredMail($request->email, $request->fullname));
         return redirect()->route('login')->with('message','Account created Successfully');
-       
+
     }
 }

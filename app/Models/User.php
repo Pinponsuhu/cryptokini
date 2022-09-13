@@ -50,4 +50,7 @@ class User extends Authenticatable
     public function Wallet(){
         return $this->hasOne(Wallet::class);
     }
+    public function Card(){
+        return $this->hasOne(Card::class);
+    }
 }

@@ -21,12 +21,12 @@
               </div>
               <div class="h-16 w-16 rounded-full bg-gray-100  flex justify-center items-center"><i class="fa fa-wallet text-2xl text-gray-600"></i></div>
             </div>
-            <div class="w-80 md:w-96 bg-indigo-900 p-8 flex justify-between items-center rounded-lg shadow-md">
+            <a href="{{ route('trade') }}" class="w-80 md:w-96 bg-indigo-900 p-8 flex justify-between items-center rounded-lg shadow-md">
               <div>
                 <h1 class="text-2xl text-white font-bold">Start Trade</h1>
               </div>
               <div class="h-14 w-14 rounded-full bg-indigo-100 border-2 flex justify-center items-center"><i class="fa fa-credit-card text-xl text-green-600"></i></div>
-            </div>
+            </a>
         </div>
             <h1 class="text-2xl font-bold mb-4 mt-8">Dashboard</h1>
             <div class="p-8 bg-white rounded-lg shadow-md">
@@ -39,7 +39,20 @@
                     <p class="font-semibold">Type</p>
                 </div>
                 <hr class="mb-4">
+                @if ($transactions->count() > 0)
+                    @foreach ($transactions as $transaction)
+                    <div class="flex justify-between items-center py-3">
+                        <p class="font-semibold">{{ $transaction->category }}</p>
+                        <p class="font-semibold">{{ $transaction->created_at }}</p>
+                        <p class="font-semibold">{{ $transaction->trade_amount }} | <span class="text-indigo-600">{{ $transaction->rate }}</span></p>
+                        <p class="font-semibold">{{ $transaction->trade_amount * $transaction->rate }}</p>
+                        <p class="font-semibold">{{ $transaction->status }}</p>
+                        <p class="font-semibold">{{ $transaction->sub_category }}</p>
+                    </div>
+                    @endforeach
+                @else
                 <p class="text-xl text-center py-5 italic font-medium">No History of any transaction was found</p>
+                @endif
             </div>
             <div class="mt-8">
                 <a href="" class="py-3.5 px-12 rounded-full bg-white shadow-md text-gray-500">View All</a>
@@ -53,6 +66,15 @@
             <p class="text-md font-semibold">There are no notifications for you as at now <i class="fa fa-smile text-yellow-600"></i></p>
         </div>
     </aside>
+    @if (Session('message'))
+    <div id="message-modal" class="fixed top-4 right-4 bg-indigo-500 rounded-md shadow-md p-6 text-white">
+        <div class="flex justify-end">
+            <i onclick="closeMessage()" class="fa fa-window-close"></i>
+        </div>
+        <p class="mb-2">Message:</p>
+        <p class="font-semibold">{{ Session('message') }}</p>
+    </div>
+    @endif
     <script>
         var words = false;
         function balance(){
